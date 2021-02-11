@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="google" content="notranslate">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/table.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./provider/deshboard.js"></script>
+    <script src="./provider/weather.js"></script>
+
+</head>
+<body onload="setTableFormate(); getLocation();timer(); ">
+    <!--<h1 id="table">Dashboard</h1>-->
+    <header>
+        <div class="center header-container ">
+
+            <div class="logo">
+                <ul>
+                    <li><a href="#">DESHBOARD</a></li>
+                </ul>
+            </div>
+            <div class="menu" id="navs">
+                <ul>
+                    <li><a href="./profile.html">PROFILE</a></li>
+                    <li><a href="#" onclick="logout()">LOGOUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section class="waither">
+        <div class="card w-card-color">
+            <div class="container w-card-color">
+                <div class="temperature" id="temp" style="font-size: 2rem;"></div>
+                <div class="row center">
+                    <img src="" id="icon">
+                    <span  class="temperatureDesc" id="temperatureDesc"></span>
+                </div>
+                <div class="windSpeed" id="windSpeed"></div>
+                <div class="skydesc" id="skyDescription"></div>
+                <div class="city" id="city"></div>
+                <div id="timer"></div>
+            </div>
+        </div>
+        <iframe class="card" id="myImg" class="myImg"> </iframe>
+    </section>
+    <section class="task" style="padding-bottom: 5rem;">
+        <button class="btnadd">📃</button>
+        <div>
+            <div style="padding: 1rem 0px;">
+                <h2>Panding Task</h2><br>
+                <div class="row" id="tablepanding"> </div>
+                <!--<table class="table" style="overflow-x:auto;"></table>-->
+            </div>
+            <div style="padding: 1rem 0rem;">
+                <h2>Complited Task</h2><br>
+                <div class="row" id="tablecomplit"> </div>
+                <!--<table class="table" id="tablecomplit" style="overflow-x:auto;"></table>-->
+            </div>
+        </div>
+    </section>
+</body>
+</html>

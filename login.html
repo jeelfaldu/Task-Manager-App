@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./auth/auth.js"></script>
+</head>
+<body>
+    <div class="container">
+
+        <form onsubmit="return false">
+            <h1>Login</h1>
+
+            <label for="email"><b>Email or No.</b></label>
+            <input type="email" placeholder="Enter email or No." name="email" id="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+            <button type="submit" class="bg-success"
+                onclick="userLogin(document.getElementById('email').value,document.getElementById('psw').value)">Login</button>
+        </form>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <span>Don't have an account ?<a href="signup.html"> Sign up</a></span>
+            <span class="psw"> <a href="./forgotpassword.html">Forgot password?</a></span>
+        </div>
+    </div>
+</body>
+</html>

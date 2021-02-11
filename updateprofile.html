@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./provider/profile.js"></script>
+</head>
+<body onload="Getprofileupdate()">
+    <div class="container">
+        <form onsubmit="return false" name="form" id="form">
+            <div>
+                <h1>Profile</h1>
+                <hr>
+                <input type="hidden" name="userid" id="userid">
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" id="name" required>
+
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" name="email" id="email" required>
+
+                <label for="mobile"><b>Mobile</b></label>
+                <input type="text" placeholder="Enter Mobile" name="mobile" id="mobile" required>
+
+                <button type="reset" class="registerbtn" id="registerbtn"
+                    onclick="profileupdate(document.getElementById('userid').value,document.getElementById('name').value,document.getElementById('email').value,document.getElementById('mobile').value)">Update</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
