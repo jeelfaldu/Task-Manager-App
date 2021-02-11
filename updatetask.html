@@ -10,26 +10,28 @@
     <title>Add Task</title>
 </head>
 <body onload="">
-    <div class="hero"> ➕ Add New Task ➕</div>
-    <div>
-        <input type="hidden" name="userid" id="userid">
-        <label for="title"><b>Title</b></label>
-        <input type="text" name="title" id="title" placeholder="Title" required>
-        <label for="desc"><b>Description</b></label>
-        <input type="text" name="desc" id="desc" placeholder="Description">
-        <label for="startdate"><b>Start Date</b></label>
-        <input type="date" name="startdate" id="startdate" placeholder="Start date" required>
-        <label for="enddate"><b>End Date</b></label>
-        <input type="date" name="enddate" id="enddate" placeholder="Start date" required>
-        <label for="status"><b>Status</b></label>
-        <select name="status" id="status">
-            <option value="1">Panding</option>
-            <option value="2">Complited</option>
-            <!--<option value="3">Reject</option>-->
-        </select>
+    <div class="container">
+        <div class="hero"> ➕ Add New Task ➕</div>
+        <form onsubmit="return false">
+            <input type="hidden" name="userid" id="userid">
+            <label for="title"><b>Title</b></label>
+            <input type="text" name="title" id="title" placeholder="Title" required>
+            <label for="desc"><b>Description</b></label>
+            <input type="text" name="desc" id="desc" placeholder="Description">
+            <label for="startdate"><b>Start Date</b></label>
+            <input type="date" name="startdate" id="startdate" placeholder="Start date" required>
+            <label for="enddate"><b>End Date</b></label>
+            <input type="date" name="enddate" id="enddate" placeholder="Start date" required>
+            <label for="status"><b>Status</b></label>
+            <select name="status" id="status">
+                <option value="1">Panding</option>
+                <option value="2">Complited</option>
+                <!--<option value="3">Reject</option>-->
+            </select>
 
-        <button type="reset"
-            onclick="update(document.getElementById('userid').value,document.getElementById('title').value,document.getElementById('desc').value,document.getElementById('startdate').value,document.getElementById('enddate').value,document.getElementById('status').value)">Update</button>
+            <button type="reset" class="bg-success"
+                onclick="update(document.getElementById('userid').value,document.getElementById('title').value,document.getElementById('desc').value,document.getElementById('startdate').value,document.getElementById('enddate').value,document.getElementById('status').value)">Update</button>
+        </form>
     </div>
 
 </body>

@@ -1,3 +1,4 @@
+//navigator.geolocation.getCurrentPosition("","")
 function getLocation() {
     let options = {
         enableHighAccuracy: true,

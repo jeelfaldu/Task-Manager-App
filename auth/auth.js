@@ -39,11 +39,13 @@ function signup(name, email, mobile, gender, dob, pass) {
             console.log(data);
             DATABASE = data
             if (data.some(ele => ele.email == obj.email)) {
-                console.log("Email already exist");
+                alert("Email already exist");
             } else {
                 obj.id = DATABASE.length
                 DATABASE.push(obj)
                 localStorage.setItem(DATABASE_KEY, JSON.stringify(DATABASE))
+                alert("Sucessfully register");
+                window.location.href = "./index.html"
             }
         }).catch(err => {
             obj.id = DATABASE.length
