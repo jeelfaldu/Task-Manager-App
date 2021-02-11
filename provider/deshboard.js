@@ -1,6 +1,13 @@
 const TASK_KEY = "task"
 const PROFILE_KEY = 'profile';
 const MARK_KEY = 'mark';
+function LoginAuth() {
+    if (localStorage.getItem(PROFILE_KEY)) {
+        window.location.href = '../dashboard.html'
+    } else {
+        window.location.href = '../login.html'
+    }
+}
 async function GetLocalStorageData(key) {
     return await new Promise((resolve, reject) => {
         if (localStorage.getItem(key)) {
@@ -50,7 +57,7 @@ function setTableFormate() {
     let Complited = ""
     let pending = ""
 
-    
+
 
     if (datatabel.length > 0) {
         pendingTask = datatabel.filter(ele => ele.status == 1)
@@ -159,8 +166,8 @@ function GetMark(userId, taskId) {
     let arr = [0]
     if (localStorage.getItem(MARK_KEY) && JSON.parse(localStorage.getItem(MARK_KEY))[userId]) {
         arr = JSON.parse(localStorage.getItem(MARK_KEY))[userId]
-        console.log(arr.includes(taskId));
-        return arr.includes(taskId)
+        console.log(arr.includes(parseInt(taskId)));
+        return arr.includes(parseInt(taskId))
     } else {
         return false
     }
@@ -170,14 +177,14 @@ function saveToMark(userid, id) {
     let arr = []
     if (localStorage.getItem(MARK_KEY)) {
         arr = JSON.parse(localStorage.getItem(MARK_KEY))[userid]
-        arr.push(id)
+        arr.push(parseInt(id))
         localStorage.setItem(MARK_KEY, JSON.stringify({ [userid]: arr }))
-        window.location.reload();
+        setTableFormate()
 
     } else {
         arr.push(id)
         localStorage.setItem(MARK_KEY, JSON.stringify({ [userid]: arr }))
-        window.location.reload();
+        setTableFormate()
     }
 }
 
@@ -188,7 +195,7 @@ function removeMark(userid, id) {
         let index = arr.indexOf(id)
         arr.splice(index, 1)
         localStorage.setItem(MARK_KEY, JSON.stringify({ [userid]: arr }))
-        window.location.reload();
+        setTableFormate()
 
     }
 }

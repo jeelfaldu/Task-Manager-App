@@ -8,11 +8,13 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="./assets/css/table.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+
+
     <script src="./provider/deshboard.js"></script>
     <script src="./provider/weather.js"></script>
 
 </head>
-<body onload="setTableFormate(); getLocation();timer(); ">
+<body onload="getLocation(); timer();  setTableFormate();">
     <!--<h1 id="table">Dashboard</h1>-->
     <header>
         <div class="center header-container ">
@@ -47,7 +49,8 @@
         <iframe class="card" id="myImg" class="myImg"> </iframe>
     </section>
     <section class="task" style="padding-bottom: 5rem;">
-        <button class="btnadd"><a style="color: #000; text-decoration: none;" href="./taskadd.html">ADD TASK 📃</a></button>
+        <button class="btnadd" onclick="window.location.href= './taskadd.html'">ADD TASK
+            📃</button>
         <div>
             <div style="padding: 1rem 0px;">
                 <h2>Panding Task</h2><br>
@@ -58,7 +61,7 @@
             </div>
             <div style="padding: 1rem 0rem;">
                 <h2>Complited Task</h2><br>
-                <div class="row" id="tablecomplit"> 
+                <div class="row" id="tablecomplit">
                     <div class="container"> Add new task </div>
                 </div>
                 <!--<table class="table" id="tablecomplit" style="overflow-x:auto;"></table>-->

@@ -18,8 +18,8 @@
             <input type="text" name="desc" id="desc" placeholder="Description">
             <label for="startdate"><b>Start Date</b></label>
             <input type="date" name="startdate" id="startdate" placeholder="Start date" required>
-            <label for="enddate"><b>End Date</b></label>
-            <input type="date" name="enddate" id="enddate" placeholder="Start date" readonly>
+            <!--<label for="enddate"><b>End Date</b></label>
+            <input type="date" name="enddate" id="enddate" placeholder="Start date" readonly>-->
             <label for="status"><b>Status</b></label>
             <select name="status" id="status">
                 <option value="1">Panding</option>
@@ -28,7 +28,7 @@
             </select>
 
             <button type="reset" class="bg-success"
-                onclick="saveTaskDetails(document.getElementById('title').value,document.getElementById('desc').value,document.getElementById('startdate').value,document.getElementById('enddate').value,document.getElementById('status').value)">Submit</button>
+                onclick="saveTaskDetails(document.getElementById('title').value,document.getElementById('desc').value,document.getElementById('startdate').value,'',document.getElementById('status').value)">Submit</button>
         </form>
     </div>
 
