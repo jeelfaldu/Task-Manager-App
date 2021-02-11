@@ -7,8 +7,10 @@
     <title>Login</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./auth/auth.js"></script>
+    <script src="./provider/weather.js"></script>
+
 </head>
-<body>
+<body onload="getLocation()">
     <div class="container">
 
         <form onsubmit="return false">
